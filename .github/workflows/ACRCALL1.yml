@@ -1,0 +1,25 @@
+name: Build a Docker image and Push it to ACR
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: azure/docker-login@v1
+        with:
+          login-server: vishwascontainerdemo.azurecr.io
+          username: ${{ secrets.DOCKER_USERNAME_ACR }}
+          password: ${{ secrets.DOCKER_PASSWORD_ACR }}
+
+      - run: |
+          docker build . -t yourACRname.azurecr.io/appdb:${{ github.sha }}
+          docker push yourACRname.azurecr.io/appdb:${{ github.sha }}

@@ -21,5 +21,5 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD_ACR }}
 
       - run: |
-          docker build . -t yourACRname.azurecr.io/appdb:${{ github.sha }}
+          docker build . -t vishwascontainerdemo.azurecr.io/appdb:${{ github.sha }}
           docker push yourACRname.azurecr.io/appdb:${{ github.sha }}

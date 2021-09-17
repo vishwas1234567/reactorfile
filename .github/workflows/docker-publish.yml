@@ -79,7 +79,7 @@ jobs:
         with:
           login-server: index.docker.io
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWOR }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - run: |
           docker pull contoso.azurecr.io/private/image:latest
           docker pull private/image:latest

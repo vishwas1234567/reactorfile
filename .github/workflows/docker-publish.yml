@@ -70,18 +70,18 @@ jobs:
           tag_with_ref: true # Info: https://github.com/docker/build-push-action/tree/releases/v1#tag_with_ref
           tag_with_sha: true # Info: https://github.com/docker/build-push-action/tree/releases/v1#tag_with_sha
           tags: latest
-      - uses: azure/docker-login@v1
-        with:
-          login-server: vishwascontainerdemo.azurecr.io
-          username: ${{ secrets.ACR_USERNAME }}
-          password: ${{ secrets.ACR_PASSWORD }}
-      - uses: azure/docker-login@v1
-        with:
-          login-server: index.docker.io
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-      - run: |
-          docker push vishwascontainerdemo.azurecr.io/vishwasdockerimage
+#       - uses: azure/docker-login@v1
+#         with:
+#           login-server: vishwascontainerdemo.azurecr.io
+#           username: ${{ secrets.ACR_USERNAME }}
+#           password: ${{ secrets.ACR_PASSWORD }}
+#       - uses: azure/docker-login@v1
+#         with:
+#           login-server: index.docker.io
+#           username: ${{ secrets.DOCKERHUB_USERNAME }}
+#           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+#       - run: |
+#           docker push vishwascontainerdemo.azurecr.io/vishwasdockerimage
 
 
 

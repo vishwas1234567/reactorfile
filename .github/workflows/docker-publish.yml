@@ -81,8 +81,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - run: |
-          docker pull vishwascontainerdemo.azurecr.io/private/image:latest
-          docker pull private/image:latest
+          docker push vishwascontainerdemo.azurecr.io/vishwasdockerimage
 
 
 

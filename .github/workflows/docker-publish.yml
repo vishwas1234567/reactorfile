@@ -73,12 +73,17 @@ jobs:
       - uses: azure/docker-login@v1
         with:
           login-server: contoso.azurecr.io
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
-
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+      - uses: azure/docker-login@v1
+        with:
+          login-server: index.docker.io
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWOR }}
       - run: |
-          docker build . -t vishwascontainerdemo.azurecr.io/demo1:${{ github.sha }}
-          docker push vishwascontainerdemo.azurecr.io/demo1:${{ github.sha }}
+          docker pull contoso.azurecr.io/private/image:latest
+          docker pull private/image:latest
+
 
 
 

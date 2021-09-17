@@ -72,7 +72,7 @@ jobs:
           tags: latest
       - uses: azure/docker-login@v1
         with:
-          login-server: contoso.azurecr.io
+          login-server: vishwascontainerdemo.azurecr.io
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
       - uses: azure/docker-login@v1
@@ -81,7 +81,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - run: |
-          docker pull contoso.azurecr.io/private/image:latest
+          docker pull vishwascontainerdemo.azurecr.io/private/image:latest
           docker pull private/image:latest
 
 

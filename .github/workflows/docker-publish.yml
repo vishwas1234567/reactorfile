@@ -25,7 +25,7 @@ env:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     permissions:
       contents: read
       packages: write

@@ -1,4 +1,4 @@
-FROM ubuntu:20
+FROM ubuntu:18
 RUN apt-get update 
 RUN apt-get upgrade -y
 RUN apt-get install nginx -y

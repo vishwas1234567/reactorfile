@@ -1,4 +1,4 @@
-name: Build Next.js web application
+name: Build web application target 1
 on: push
 jobs:
   build-container:

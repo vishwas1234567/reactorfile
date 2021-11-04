@@ -20,5 +20,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: vishwasnarayanare/webnext_christ
+          repository: vishwasnarayanare/vishwas
           tags: ${{ github.run_number }}, latest

@@ -27,7 +27,7 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags:  ${{ secrets.DOCKER_HUB_USERNAME }}/somethingnew_for_christuniversity:latest
+          tags:  ${{ secrets.DOCKERHUB_USERNAME }}/something_new_christ_university:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image digest

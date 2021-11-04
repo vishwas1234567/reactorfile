@@ -65,7 +65,7 @@ jobs:
         uses: Azure/container-scan@v0.1
         with:
           # Docker image to scan
-          image-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.tags }}
+          image-name: ${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.tags }}
           # Minimum severities of vulnerabilities to be displayed (UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL)
           severity-threshold: HIGH
           # Github token

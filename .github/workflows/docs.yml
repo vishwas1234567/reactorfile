@@ -17,11 +17,11 @@ jobs:
       run: |
         echo ${{ github.ref }}
         git add .
-        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
+        git config --local user.email "vishwasnarayan2345@gmail.com"
+        git config --local user.name "vishwas1234567"
         git commit -m "CI: Automated build push" -a | exit 0
     - name: Push changes
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/main'
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

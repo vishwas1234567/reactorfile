@@ -1,5 +1,5 @@
-# FROM snyk/snyk:linux
-FROM debian:unstable-20211115-slim
+FROM snyk/snyk:linux
+# FROM debian:unstable-20211115-slim
 # FROM ubuntu:latest
 RUN apt-get update 
 RUN apt-get upgrade -y

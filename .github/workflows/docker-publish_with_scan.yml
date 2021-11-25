@@ -78,8 +78,18 @@ jobs:
           # Docker image to scan
           image-name: ghcr.io/vishwas1234567/reactorfile:main
           # Minimum severities of vulnerabilities to be displayed (UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL)
-          severity-threshold: HIGH
+          severity-threshold: CRITICAL
           # Github token
           token: ${{ github.token }}
           # Add additional checks to ensure the image is secure and follows best practices and CIS standards
           run-quality-checks: true
+#           continue-on-error: true
+#           severity-threshold: CRITICAL
+#           run-quality-checks: true
+#       - name: Container image scan of the main repo
+#        uses: Azure/container-scan@v0
+#         with:
+#           image-name: vickybytes.azurecr.io/myapp:${{ github.sha }}
+#           continue-on-error: true
+#           severity-threshold: CRITICAL
+#           run-quality-checks: true  

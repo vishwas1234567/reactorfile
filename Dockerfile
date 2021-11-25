@@ -1,4 +1,5 @@
-FROM snyk/snyk:linux
+# FROM snyk/snyk:linux
+FROM ubuntu:18.04
 # FROM ubuntu:latest
 RUN apt-get update 
 RUN apt-get upgrade -y

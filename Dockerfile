@@ -1,5 +1,5 @@
 # FROM snyk/snyk:linux
-FROM ubuntu:18.04
+FROM debian:unstable-20211115-slim
 # FROM ubuntu:latest
 RUN apt-get update 
 RUN apt-get upgrade -y

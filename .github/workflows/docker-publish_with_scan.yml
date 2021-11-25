@@ -23,7 +23,7 @@ env:
 
 
 jobs:
-  build:
+  scanning:
 
     runs-on: ubuntu-latest
     permissions:

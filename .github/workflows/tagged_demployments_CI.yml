@@ -1,0 +1,27 @@
+name: tagged Deployment
+on:
+  push:
+    tags:
+    - v*
+jobs:
+  build-container:
+    name: Build container
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2 
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: ${{ github.repository }}/the_new
+          tags: ${{ github.run_number }}, latest
+      - name: Push to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: vishwasnarayanare/vishwas
+          tags: ${{ github.run_number }}, latest

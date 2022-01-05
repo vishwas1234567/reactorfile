@@ -17,7 +17,7 @@ jobs:
 
     - run: |
         cd containerscan
-        docker build . -t vishwascontainerdemo.azurecr.io/myapp:${{ github.sha }}
+        docker build . -t vishwasnarayanazure.azurecr.io/myapp:${{ github.sha }}
   
     - uses: Azure/container-scan@v0.1
       with:

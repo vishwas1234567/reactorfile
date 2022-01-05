@@ -12,10 +12,10 @@ jobs:
       
       - uses: azure/docker-login@v1
         with:
-          login-server: vishwascontainerdemo.azurecr.io
+          login-server: vishwasnarayanazure.azurecr.io
           username: ${{ secrets.DOCKER_USERNAME_ACR }}
           password: ${{ secrets.DOCKER_PASSWORD_ACR }}
 
       - run: |
-          docker build . -t vishwascontainerdemo.azurecr.io/vishwasdockerimage1:${{ github.sha }}
-          docker push vishwascontainerdemo.azurecr.io/vishwasdockerimage1:${{ github.sha }}
+          docker build . -t vishwasnarayanazure.azurecr.io/vishwasdockerimage1:${{ github.sha }}
+          docker push vishwasnarayanazure.azurecr.io/vishwasdockerimage1:${{ github.sha }}

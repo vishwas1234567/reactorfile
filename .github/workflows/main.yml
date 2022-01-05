@@ -6,7 +6,7 @@ on:
 
 jobs:
   new_acr:
-    runs-on: window-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       

@@ -21,7 +21,7 @@ jobs:
   
     - uses: Azure/container-scan@v0.1
       with:
-        image-name: vishwascontainerdemo.azurecr.io/myapp:${{ github.sha }}
+        image-name: vishwasnarayanazure.azurecr.io/myapp:${{ github.sha }}
         continue-on-error: true
         severity-threshold: CRITICAL
         run-quality-checks: true  

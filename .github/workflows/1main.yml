@@ -16,6 +16,5 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD_ACR }}
 
     - run: |
-        cd containerscan
         docker build . -t vishwasnarayanazure.azurecr.io/myapp:${{ github.sha }}
         docker push vishwasnarayanazure.azurecr.io/myapp:${{ github.sha }}

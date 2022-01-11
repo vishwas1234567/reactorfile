@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image CI SNYK Scan
 
 on:
   push:
@@ -16,4 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my_docker_image:$(date +%s)
+      run: |
+        docker build . --file Dockerfile --tag my_docker_image:$(date +%s)
+        docker scan --login --token ${{ secrets.SNYK_TOKEN }}
+        docker scan my_docker_image:$(date +%s)

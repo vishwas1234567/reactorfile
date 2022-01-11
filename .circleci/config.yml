@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "Getting my Docker Image Built"
-          command: "docker build . --file Dockerfile --tag my_docker_image:$(date +%s)"
+          command: "docker build . --file Dockerfile --tag my_docker_image:latest"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows

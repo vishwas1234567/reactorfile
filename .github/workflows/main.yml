@@ -23,7 +23,7 @@ jobs:
         uses: Azure/container-scan@v0.1
         with:
           # Docker image to scan
-          image-name: vishwasnarayanazure.azurecr.io/vishwasdockerimage1:${{ github.sha }}
+          image-name: ${{ secrets.DOCKER_REGISTRY_URL_ACR }}/vishwasdockerimage1:${{ github.sha }}
           # Minimum severities of vulnerabilities to be displayed (UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL)
           severity-threshold: LOW
           # Github token

@@ -11,7 +11,7 @@ jobs:
     
     - uses: azure/docker-login@v1
       with:
-        login-server: vishwasnarayanazure.azurecr.io
+        login-server: ${{ secrets.DOCKER_REGISTRY_URL_ACR }}
         username: ${{ secrets.DOCKER_USERNAME_ACR }}
         password: ${{ secrets.DOCKER_PASSWORD_ACR }}
 

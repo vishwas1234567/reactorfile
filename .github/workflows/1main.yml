@@ -16,5 +16,5 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD_ACR }}
 
     - run: |
-        docker build . -t vishwasnarayanazure.azurecr.io/myapp:${{ github.sha }}
-        docker push vishwasnarayanazure.azurecr.io/myapp:${{ github.sha }}
+        docker build . -t ${{ secrets.DOCKER_REGISTRY_URL_ACR }}/myapp:${{ github.sha }}
+        docker push v${{ secrets.DOCKER_REGISTRY_URL_ACR }}/myapp:${{ github.sha }}

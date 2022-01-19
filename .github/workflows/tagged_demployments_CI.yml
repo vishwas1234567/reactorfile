@@ -23,5 +23,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: vishwasnarayanare/vishwas
+          repository: ${{ secrets.DOCKERHUB_USERNAME }}/vishwas
           tags: ${{ github.run_number }}, latest

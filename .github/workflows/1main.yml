@@ -20,6 +20,6 @@ jobs:
         docker push ${{ secrets.DOCKER_REGISTRY_URL_ACR }}/myapp:${{ github.sha }}
     - uses: azure/webapps-deploy@v2
       with:
-        app-name: 'myapp'
+        app-name: 'new1234567'
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E4892798AACD403A84FA7278313620EF}}
         images: 'mycontainer.azurecr.io/myapp:${{ github.sha }}'

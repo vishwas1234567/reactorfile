@@ -17,4 +17,4 @@ jobs:
 
     - run: |
         docker build . -t ${{ secrets.DOCKER_REGISTRY_URL_ACR }}/myapp:${{ github.sha }}
-        docker push v${{ secrets.DOCKER_REGISTRY_URL_ACR }}/myapp:${{ github.sha }}
+        docker push ${{ secrets.DOCKER_REGISTRY_URL_ACR }}/myapp:${{ github.sha }}

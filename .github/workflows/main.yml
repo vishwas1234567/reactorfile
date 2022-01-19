@@ -2,7 +2,8 @@ name: Build image and Push it to ACR
 
 on:
   push:
-    branches: [ main ]
+    tags:
+    - v*
 
 jobs:
   new_acr:

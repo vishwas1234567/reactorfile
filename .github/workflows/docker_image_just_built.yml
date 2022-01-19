@@ -19,4 +19,4 @@ jobs:
       run: |
         docker build . --file Dockerfile --tag my_docker_image:$(date +%s)
         docker scan --login --token ${{ secrets.SNYK_TOKEN }}
-        docker scan --severity=medium my_docker_image:$(date +%s)
+        docker scan my_docker_image:$(date +%s)

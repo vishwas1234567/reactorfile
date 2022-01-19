@@ -17,15 +17,15 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD_ACR }}
 
       - run: |
-          docker build . -t vishwasnarayanazure.azurecr.io/vishwasdockerimage1:${{ github.sha }}
-          docker push vishwasnarayanazure.azurecr.io/vishwasdockerimage1:${{ github.sha }}
+          docker build . -t ${{ secrets.DOCKER_REGISTRY_URL_ACR }}/vishwasdockerimage1:${{ github.sha }}
+          docker push ${{ secrets.DOCKER_REGISTRY_URL_ACR }}/vishwasdockerimage1:${{ github.sha }}
       - name: Container image scan
         uses: Azure/container-scan@v0.1
         with:
           # Docker image to scan
           image-name: ${{ secrets.DOCKER_REGISTRY_URL_ACR }}/vishwasdockerimage1:${{ github.sha }}
           # Minimum severities of vulnerabilities to be displayed (UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL)
-          severity-threshold: LOW
+          severity-threshold: HIGH
           # Github token
           token: ${{ github.token }}
           # Add additional checks to ensure the image is secure and follows best practices and CIS standards
@@ -36,7 +36,7 @@ jobs:
           # Docker image to scan
           image-name: ghcr.io/vishwas1234567/reactorfile:main
           # Minimum severities of vulnerabilities to be displayed (UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL)
-          severity-threshold: LOW
+          severity-threshold: HIGH
           # Github token
           token: ${{ github.token }}
           # Add additional checks to ensure the image is secure and follows best practices and CIS standards

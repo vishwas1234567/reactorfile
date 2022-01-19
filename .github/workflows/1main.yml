@@ -1,6 +1,9 @@
 name: Linux Container Workflow
 
-on: [push]
+on:
+  push:
+    tags:
+    - v*
 
 jobs:
   build:

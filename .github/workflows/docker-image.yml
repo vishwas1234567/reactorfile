@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Sonar Cloud Testing
 
 on:
   # Trigger analysis when pushing in master or pull requests, and when creating

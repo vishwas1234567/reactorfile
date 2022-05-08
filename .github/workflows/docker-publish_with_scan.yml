@@ -78,7 +78,7 @@ jobs:
           # Docker image to scan
           image-name: ghcr.io/vishwas1234567/reactorfile:main
           # Minimum severities of vulnerabilities to be displayed (UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL)
-          severity-threshold: HIGH
+          severity-threshold: LOW
           # Github token
           token: ${{ github.token }}
           # Add additional checks to ensure the image is secure and follows best practices and CIS standards
